@@ -220,3 +220,53 @@ it shows your storage, but you could partition it and create a NFS export, other
    if we log out, we will lose our ability to run the script without specifing the path, so we need to make our change
    permanent, we can do this by modifying the ~/.profile
    ```echo 'PATH="$PATH:$HOME/scripts"'>> ~/.profile```
+   
+   ## 2.2 Getting Help
+   ### 2.2.1 Man page
+   Traditional package documentation for application usage
+   ```man <cmd>```
+   When you run a command, you can check the exit status by running
+   `echo $?` after that command
+   if return 0, means ok.
+   After you open the man page, you can search by type "/" following the things you want to search
+   ```man -k [commands you want to search for manual]```
+   or
+   ```apropos [commands you want to serach for manual]```
+   ### 2.2.2 Info pages
+   It normally provide more detailed information about a command than its man page.Additionally, info uses a structure for    linking pages together, and may be assembled into a larger collection.
+   ```info <command>```
+   ```htop #display running processes in a pretty format```
+   ### lab
+   determine how many lines the file contains
+   
+   ## 2.3 Using Files and directories
+   ### 2.3.1 Files and directories
+   #### FHS
+   Filesystem and Hierachy standard defines the structure of the file system on linux
+   The Root FileSystem
+  - /           the root directory, the top of the file system
+  -/bin         user binaries, it contains the commands the user can run
+  -/boot        contains the files to boot the linux system
+  -/dev         device files
+  -/etc         configuration files, the installed applcation config files will be here
+  -/home        user home directire
+  -/lib         shared libs
+  -/mnt         shared libariries
+  -/opt         optional packages
+  -/proc        kernal and process files
+  -/root        root user home directory
+  -/run         application state files
+  -/sbin        system admin binaries
+  -/srv         service data
+  -/tmp
+  -/usr
+  -/var
+  #### working around
+  Go up to last location ```cd -```
+  Go up two levels ```cd ../..```
+  
+  ### 2.3.2 Hidden Files
+  hidden files maybe listed via ls using the -a option, to show all files
+  ```ls -a  #show all files include hiddent files```
+   
+   
