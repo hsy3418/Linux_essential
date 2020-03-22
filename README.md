@@ -121,3 +121,102 @@ it shows your storage, but you could partition it and create a NFS export, other
  ``` htop```
  - Remove installation
  ```` sudo make uninstall```
+ 
+ ## 1.4 working in Linu
+ ### 1.4.1 Desktop skills
+ Popular Desktop Environments
+ - LXDE
+ - MATE
+ - XFCE
+ - Cinnamon
+ - Gnome
+ - Unity
+ - KDE
+ 
+ Userspace and Privacy
+ A user has a home directry under /home/
+ ```ls /home/ #check how many users, each user wouldn't have permission to test other users's file, ReadOnly permission```
+ There is a Root user, if you have root access, you have access to everything
+ 
+  ### 1.4.2 CLI
+  Show hostname ```hostname```
+  SSH remote system ```username@hostname``` or ```username@remote_id```
+  
+  Localclient[SSH client]-------------> Server (connecting over the network port 22)
+  
+  ### 1.4.3 Industry Uses
+  #### Virtualization
+  ##### Physical host computer
+  It will have physical RAM Storage and CPU.With V, we have virtual guest, virtual box could be used to created virtual machine, vm is assigned some amount of memory and storage. 
+  
+  ##### Cloud Linux
+  
+  #### Lab
+   View the release files by using globbing to pick up everyfile that contains the word "release" in the /etc/ directory
+   ```cat /etc/*release*```
+   View the issues files
+   ```cat /etc/*issue*```
+   Run a utility to determine the linux distribution
+   ```lsb_release -a```
+   ```hostnamectl```
+   
+   ## 2.1. Finding your way in linux
+   ### 2.1.1 Basic shell
+   STDIN is input, will be executed as a process
+   STDOUT is output
+   Output ->   STDOUT ->Display
+         \           \
+          \> STDERR -> \> Redirection or Pipeline
+   
+   ### 2.1.2 Command linx syntax
+   ```ls -l # long listing```
+   ```ls -ls #size information```
+   ``` ls -alsh # for all,long listing,size, human readable```
+   ``` man ls #check doc for the command```
+   
+   ### 2.1.3 Variables
+   Using var to store values for reference
+   - Assign a variable , use a $ to reference the variable
+   ```test_variable="This is a variable"```
+   ```echo $test_variable```
+   - Bash variables
+   $HOME the current users's home diretory
+   $PS1 the primary prompty string
+   ```[\u@\h \W]\$```
+   ```[username@hostname workingdirectory]```
+   $PATH a colon-separated list of directories where the shells looks for commands
+   
+   var1 will be assigned what ever exected in the ()
+   ``` var1=$(ls)```
+   
+   ### 2.1.4 Quoting
+   Preserve input that contains special characters or spaces
+   #### Escape Character
+   backslash \ is the escape character to preserves the literal value of the next following character, with the exception of 
+   newline.
+   ```var1= Some\ value```
+   ```echo $var1```
+   ```Some value```
+   #### Single quotes
+   preserve every literal value, including escape character
+   #### Double quotes
+   preserve most literal values, except $,single quote and \
+   
+   ### Lab
+   check current working directory ```pwd```
+   determine which users are currently log in ```w```
+   dterminw which users last logged in to the system, as well as the last time the system was booted by running
+   ```last```
+   record your findings in `/home/cloud_user` by writing the output of the previous commands into a new file
+   ```w > log.txt #replace the original file``` 
+   ```last >> log.txt #append to the original file```
+   
+   list the current environment variables, and locate the $PATH variable
+   ```env```
+   examine the $PATH variable
+   ```echo $PATH```
+   append scripts directory to $PATH
+   ```PATH=$PATH:$HOME/scripts```
+   if we log out, we will lose our ability to run the script without specifing the path, so we need to make our change
+   permanent, we can do this by modifying the ~/.profile
+   ```echo 'PATH="$PATH:$HOME/scripts"'>> ~/.profile```
