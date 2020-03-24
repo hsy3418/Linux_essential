@@ -269,4 +269,49 @@ it shows your storage, but you could partition it and create a NFS export, other
   hidden files maybe listed via ls using the -a option, to show all files
   ```ls -a  #show all files include hiddent files```
    
-   
+  ### 2.3.3 Home directories
+  A home directory in created undre /home, for each ordinary user
+  Checks all of the user under this linux system ```cat /etc/passwd```
+  e.g.output consists of 
+  username, userid, usergroupid,and the bash file it received.
+  Check variables ```env```
+  
+  ### 2.3.4 Absolute and relative Paths
+  #### absolute path
+  starting with a /
+  ```pwd``` shows absolute path
+  #### relative path
+  
+  ###Lab
+  - Determine which file is the oldest ```ls -lAt ~/Practice/Test/var/log/```To list the directory and sort by date, we use -l for "long listing", -A for "almost all", and -t for "sort by time".
+  
+  ### 2.4 Creating, Moving and Deleting Files and directories
+  #### 2.4.1 Files and directories
+  
+  #### 2.4.2 Case sensitivity
+  ```mkdir new folder #this will create two directory so```
+  replace by ```mkdir new\ folder```
+  - Determine Which File Is the Largest ```ls -lS ~/Practice/Test/var/log/ ```
+  To list the directory and sort by file size, we use -l ("long listing") and -S ("sort by file size").
+  - Determine when the file was last accessed ```ls -lu ~/Practice/Test/sos_commands/networking/netstat_-W_-neopa #u access time ```
+  
+ #### 2.4.3 Simple Globbing
+ Globbing is using partial matching to work with groups of files and directories.
+ It is primarily used to match patterns in filenames or text by using a wildcard character to create the pattern.
+ - ? matching any single character
+ - * matching any number of characters
+ - [] match a character from a range
+ ```ls ????[1-4] #match something start with any four characters but ends with a range between 1 and 4```
+ ```ls *[[:digit:]] #give anything ends in any digits``` this is same as ```ls *[0-9]``` 
+ ```ls *[[:upper:]] give anything ends with uppercase``` this is same as ```ls *[A-Z]```
+ ```ls *[[:lower:]] give anything ends with lowercase``` this is same as ```ls *[a-z]```
+ ```ls *[[:alpha:]] give anything ends with lowercase``` this is same as ```ls *[a-zA-Z]```
+ ```ls *[[:alphanum:]] give anything ends with lowercase``` this is same as ```ls *[a-zA-Z0-9]```
+
+
+### Lab
+```cp -R Practice/Test Report #we need -R cause we are coping a file under a folder```
+## 3 The power of command line
+### 3.1.1 Archiving files on the command line
+  
+  
